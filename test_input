@@ -1,5 +1,5 @@
   &system
-	PD(1) = 11, 11, 20
+	PD(1) = 11, 11, 22
 	crystal_coordinates = .false., 
 	domain_prefix = '/lustre/scratch/rohitk/FDPML_tmp/Domain.dat',
 	mass_prefix = '/lustre/scratch/rohitk/FDPML_tmp/mass.dat', 
