@@ -1,0 +1,13 @@
+  &system
+	PD(1) = 11, 11, 20
+	crystal_coordinates = .false., 
+	domain_prefix = '/lustre/scratch/rohitk/FDPML_tmp/Domain.dat',
+	mass_prefix = '/lustre/scratch/rohitk/FDPML_tmp/mass.dat', 
+	mass_input = .true., 
+	flfrc1 = '/home/1628/QuantumEspresso/Si/results/Si_q2.fc', 
+	flfrc2 = '/home/1628/QuantumEspresso/Si/results/Si_q2.fc'
+  /
+  &domain
+	nanoparticle = .false.
+	Radius = 0.5
+  /

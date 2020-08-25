@@ -1,0 +1,5 @@
+*.mod
+*.o
+*.out
+output_*
+mpi_submit_*
