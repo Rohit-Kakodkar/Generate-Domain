@@ -176,7 +176,6 @@ PROGRAM generate_domain
 !	These are MPI-IO calls to write to same file at the same time
 	CALL MPI_File_open(comm, domain_prefix, MPI_MODE_WRONLY + MPI_MODE_CREATE, MPI_INFO_NULL, fh, ierr)
 	CALL MPI_Type_size(MPI_INT, type_size, ierr)
-	print *, my_id, nr3_start
 	offset = (nr1*nr2*natsc*nr3_start)*type_size
 	CALL MPI_File_seek(fh, offset, MPI_SEEK_SET, ierr)
 	CALL MPI_File_write(fh, my_ityp_PD, size(my_ityp_PD), MPI_INT, status, ierr)
@@ -213,7 +212,6 @@ SUBROUTINE get_nr3(nr3, my_nr3, nr3_start)
 		my_nr3 = my_nr3+1
 	ENDIF
 	
-	print *, my_id, my_nr3
 	
 	CALL MPI_ALLGATHER(my_nr3, 1, MPI_INT, everyones_nr3, 1, MPI_INT, comm, ierr)
 	
