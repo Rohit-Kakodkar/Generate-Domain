@@ -178,7 +178,7 @@ PROGRAM generate_domain
 	CALL MPI_Type_size(MPI_INT, type_size, ierr)
 	offset = (nr1*nr2*natsc*nr3_start)*type_size
 	CALL MPI_File_seek(fh, offset, MPI_SEEK_SET, ierr)
-	CALL MPI_File_write(fh, my_ityp_PD, size(my_ityp_PD), MPI_INT, status, ierr)
+	CALL MPI_File_write_all(fh, my_ityp_PD, size(my_ityp_PD), MPI_INT, status, ierr)
 	CAlL MPI_File_close(fh, ierr)
 	
 	IF (mass_input) THEN
